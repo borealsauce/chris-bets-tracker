@@ -107,7 +107,7 @@ function render(D){
     g+=`<text x="${L-10}" y="${mid+4}" text-anchor="end" fill="#d4d4d4" font-size="12" font-family="Inter">${esc(short(b.picks))}</text>`;
     g+=`<rect x="${z2}" y="${y+6}" width="1" height="${rowH-12}" fill="#262626"/>`;
     g+=`<rect x="${x}" y="${y+8}" width="${Math.max(w,p===0?0:2)}" height="${rowH-16}" rx="4" fill="${color}"><title>${esc(b.picks)}: ${usd(p,true)}</title></rect>`;
-    g+=`<text x="${p>=0?x+w+6:x-6}" y="${mid+4}" text-anchor="${p>=0?'start':'end'}" fill="${color}" font-size="12" font-weight="600" font-family="Inter">${usd(p,true)}</text>`;
+    g+=`<text x="${p>=0?x+w+6:z2+6}" y="${mid+4}" text-anchor="start" fill="${color}" font-size="12" font-weight="600" font-family="Inter">${usd(p,true)}</text>`;
   });
   document.getElementById('chart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Profit per bet">${g}</svg>`;
 
