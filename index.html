@@ -68,13 +68,14 @@ function render(D){
   const staked = bets.reduce((s,b)=>s+b.stake,0);
   const paid = bets.reduce((s,b)=>s+b.paid,0);
   const net = paid-staked;
-  const wins = bets.filter(b=>b.result==='Win').length;
-  const losses = bets.length-wins;
+  const graded = bets.filter(b=>b.result!=='Fee');
+  const wins = graded.filter(b=>b.result==='Win').length;
+  const losses = graded.length-wins;
   const roi = staked ? (net/staked)*100 : 0;
   const roiTxt = (Math.abs(roi-Math.round(roi))<0.05?Math.round(roi):roi.toFixed(1))+'%';
-  document.getElementById('sub').textContent = `Chris is ${net>=0?'up':'down'} ${usd(net)} on ${bets.length} bets so far`;
+  document.getElementById('sub').textContent = `Chris is ${net>=0?'up':'down'} ${usd(net)} on ${graded.length} bets so far (fees included)`;
   document.getElementById('hero').innerHTML = [
-    ['Net winnings', usd(net,true), net>=0?'pos shim':'neg shim','hero', `${bets.length} bets`],
+    ['Net winnings', usd(net,true), net>=0?'pos shim':'neg shim','hero', `${graded.length} bets, fees included`],
     ['Total staked', usd(staked), '', '', ''],
     ['Total paid out', usd(paid), '', '', ''],
     ['Record', `${wins}–${losses}`, '', '', `${wins} wins · ${losses} loss${losses===1?'':'es'}`],
@@ -123,7 +124,7 @@ function render(D){
       <td data-v="${b.stake}">${usd(b.stake)}</td>
       <td data-v="${b.paid}">${paidTxt}</td>
       <td class="${profit>=0?'pos':'neg'}" data-v="${profit}">${usd(profit,true)}</td>
-      <td><span class="badge ${b.result==='Win'?'win':'loss'}">${esc(b.result)}</span></td>
+      <td><span class="badge ${b.result==='Win'?'win':(b.result==='Fee'?'loss':'loss')}">${esc(b.result)}</span></td>
     </tr>`;
   }).join('');
   const foot=`<tr class="ft">
