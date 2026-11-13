@@ -113,11 +113,10 @@ function render(D){
   });
   document.getElementById('chart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Profit per bet">${g}</svg>`;
 
-  let rw=0,rn=0;
+  const mult=(pd,st)=>st?(pd/st).toFixed(2)+'×':'—';
   const rows=bets.map(b=>{
     const profit=b.paid-b.stake;
-    if(b.result!=='Fee'){rn++; if(b.result==='Win') rw++;}
-    const wp = b.result==='Fee' ? '<span class="muted">—</span>' : pct(rw,rn);
+    const wp = b.result==='Fee' ? '<span class="muted">—</span>' : mult(b.paid,b.stake);
     const paidTxt = b.result==='Loss'
       ? `${usd(b.paid)}${b.toWin!=null?` <span class="muted">(to win ${usd(b.toWin)})</span>`:''}`
       : usd(b.paid);
@@ -130,7 +129,7 @@ function render(D){
       <td data-v="${b.paid}">${paidTxt}</td>
       <td class="${profit>=0?'pos':'neg'}" data-v="${profit}">${usd(profit,true)}</td>
       <td><span class="badge ${b.result==='Win'?'win':(b.result==='Fee'?'loss':'loss')}">${esc(b.result)}</span></td>
-      <td title="Running win rate through this bet">${wp}</td>
+      <td title="Paid ÷ stake">${wp}</td>
     </tr>`;
   }).join('');
   const foot=`<tr class="ft">
@@ -138,11 +137,11 @@ function render(D){
     <td>${usd(staked)}</td><td>${usd(paid)}</td>
     <td class="${net>=0?'pos':'neg'}">${usd(net,true)}</td>
     <td>${wins}–${losses}</td>
-    <td>${pct(wins,graded.length)}</td>
+    <td>${mult(paid,staked)}</td>
   </tr>`;
   document.getElementById('table').innerHTML=`<table><thead><tr>
     <th class="t">Picks</th><th class="t">Date</th><th class="t">Type</th>
-    <th>Stake</th><th>Paid</th><th>Profit</th><th>Result</th><th>Win %</th>
+    <th>Stake</th><th>Paid</th><th>Profit</th><th>Result</th><th>Multiple</th>
   </tr></thead><tbody>${rows}</tbody><tfoot>${foot}</tfoot></table>`;
   document.getElementById('notes').innerHTML=(D.notes||[]).map(esc).join('<br>');
 }
