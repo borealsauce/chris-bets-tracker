@@ -32,7 +32,7 @@
       "result": "Win"
     },
     {
-      "date": "Nov 8–9",
+      "date": "Nov 8\u20139",
       "picks": "F. Wagner, M. Nabers",
       "type": "2-Pick Power Play",
       "stake": 199,
@@ -41,7 +41,7 @@
       "note": "cash-out"
     },
     {
-      "date": "Nov 8–9",
+      "date": "Nov 8\u20139",
       "picks": "A. Black, M. Nabers",
       "type": "2-Pick Power Play",
       "stake": 199,
@@ -72,6 +72,22 @@
       "stake": 50,
       "paid": 0,
       "result": "Fee"
+    },
+    {
+      "date": "Nov 14",
+      "picks": "Z. Risacher, D. Mensah",
+      "type": "2-Pick Power Play",
+      "stake": 149,
+      "paid": 1005.75,
+      "result": "Win"
+    },
+    {
+      "date": "Nov 14",
+      "picks": "K. Irving, D. Mensah",
+      "type": "2-Pick Power Play",
+      "stake": 149,
+      "paid": 283.1,
+      "result": "Win"
     }
   ]
 }
