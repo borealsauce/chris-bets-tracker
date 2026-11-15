@@ -2,13 +2,13 @@
  "title": "Chris Bets Tracker",
  "group": "Chris bets",
  "notes": [
-  "Oldest first. Dates for the Wagner and Black slips were not visible in the screenshots.",
+  "Oldest first.",
   "The A. Black and M. Nabers $199 slip appeared in two screenshots and is counted once.",
   "Send new bet screenshots in chat and this page gets updated."
  ],
  "bets": [
   {
-   "date": "Before Nov 8",
+   "date": "Nov 10",
    "picks": "I. Collier, S. Diggs",
    "type": "2-Pick Power Play",
    "stake": 150,
@@ -32,7 +32,7 @@
    "result": "Win"
   },
   {
-   "date": "Nov 8\u20139",
+   "date": "Nov 11",
    "picks": "F. Wagner, M. Nabers",
    "type": "2-Pick Power Play",
    "stake": 199,
@@ -41,7 +41,7 @@
    "note": "cash-out"
   },
   {
-   "date": "Nov 8\u20139",
+   "date": "Nov 11",
    "picks": "A. Black, M. Nabers",
    "type": "2-Pick Power Play",
    "stake": 199,
@@ -72,6 +72,14 @@
    "stake": 50,
    "paid": 0,
    "result": "Fee"
+  },
+  {
+   "date": "Nov 14",
+   "picks": "Z. Risacher, D. Mestemaker",
+   "type": "2-Pick Power Play",
+   "stake": 149,
+   "paid": 1266.5,
+   "result": "Win"
   },
   {
    "date": "Nov 14",
