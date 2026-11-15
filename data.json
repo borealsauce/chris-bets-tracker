@@ -1,124 +1,133 @@
 {
- "title": "Chris Bets Tracker",
- "group": "Chris bets",
- "notes": [
-  "Oldest first.",
-  "Send new bet screenshots in chat and this page gets updated."
- ],
- "bets": [
-  {
-   "date": "Nov 10",
-   "picks": "I. Collier, S. Diggs",
-   "type": "2-Pick Power Play",
-   "stake": 150,
-   "paid": 1012.5,
-   "result": "Win"
-  },
-  {
-   "date": "Nov 8",
-   "picks": "Z. Charbonnet, J. III",
-   "type": "2-Pick Power Play",
-   "stake": 40,
-   "paid": 76,
-   "result": "Win"
-  },
-  {
-   "date": "Nov 8",
-   "picks": "M. Wilson, J. III",
-   "type": "2-Pick Power Play",
-   "stake": 100,
-   "paid": 190,
-   "result": "Win"
-  },
-  {
-   "date": "Nov 11",
-   "picks": "F. Wagner, M. Nabers",
-   "type": "2-Pick Power Play",
-   "stake": 199,
-   "paid": 259.31,
-   "result": "Win",
-   "note": "cash-out"
-  },
-  {
-   "date": "Nov 11",
-   "picks": "A. Black, M. Nabers",
-   "type": "2-Pick Power Play",
-   "stake": 199,
-   "paid": 517.4,
-   "result": "Win"
-  },
-  {
-   "date": "Nov 10",
-   "picks": "J. McCain, J. Daniels",
-   "type": "2-Pick Power Play",
-   "stake": 5,
-   "paid": 0,
-   "toWin": 22.5,
-   "result": "Loss"
-  },
-  {
-   "date": "Nov 10",
-   "picks": "D. Lillard, S. Diggs",
-   "type": "2-Pick Power Play",
-   "stake": 175,
-   "paid": 350,
-   "result": "Win"
-  },
-  {
-   "date": "Nov 12",
-   "picks": "Game buy-in fee",
-   "type": "Fee",
-   "stake": 50,
-   "paid": 0,
-   "result": "Fee"
-  },
-  {
-   "date": "Nov 14",
-   "picks": "Z. Risacher, D. Mestemaker",
-   "type": "2-Pick Power Play",
-   "stake": 149,
-   "paid": 1266.5,
-   "result": "Win"
-  },
-  {
-   "date": "Nov 14",
-   "picks": "Z. Risacher, D. Mensah",
-   "type": "2-Pick Power Play",
-   "stake": 149,
-   "paid": 1005.75,
-   "result": "Win"
-  },
-  {
-   "date": "Nov 14",
-   "picks": "K. Irving, D. Mensah",
-   "type": "2-Pick Power Play",
-   "stake": 149,
-   "paid": 283.1,
-   "result": "Win"
-  },
-  {
-   "date": "Nov 14",
-   "picks": "J. McCain, J. Maiava",
-   "type": "2-Pick Power Play",
-   "stake": 175,
-   "paid": 420,
-   "result": "Win"
-  },
-  {
-   "date": "Nov 14",
-   "picks": "I. Collier, S. Leavitt",
-   "type": "2-Pick Power Play",
-   "stake": 150,
-   "paid": 825,
-   "result": "Win"
-  },
-  {
-   "date": "Nov 14",
-   "picks": "D. Mitchell, S. Leavitt",
-   "type": "2-Pick Power Play",
-   "stake": 190,
-   "paid": 323,
-   "result": "Win"
+  "title": "Chris Bets Tracker",
+  "group": "Chris bets",
+  "notes": [
+    "Profit and split use the account totals (deposits, balance and withdrawals). The bet list may be missing some winning slips, so its own totals can run lower.",
+    "Send new bet screenshots in chat and this page gets updated."
+  ],
+  "bets": [
+    {
+      "date": "Nov 10",
+      "picks": "I. Collier, S. Diggs",
+      "type": "2-Pick Power Play",
+      "stake": 150,
+      "paid": 1012.5,
+      "result": "Win"
+    },
+    {
+      "date": "Nov 8",
+      "picks": "Z. Charbonnet, J. III",
+      "type": "2-Pick Power Play",
+      "stake": 40,
+      "paid": 76,
+      "result": "Win"
+    },
+    {
+      "date": "Nov 8",
+      "picks": "M. Wilson, J. III",
+      "type": "2-Pick Power Play",
+      "stake": 100,
+      "paid": 190,
+      "result": "Win"
+    },
+    {
+      "date": "Nov 11",
+      "picks": "F. Wagner, M. Nabers",
+      "type": "2-Pick Power Play",
+      "stake": 199,
+      "paid": 259.31,
+      "result": "Win",
+      "note": "cash-out"
+    },
+    {
+      "date": "Nov 11",
+      "picks": "A. Black, M. Nabers",
+      "type": "2-Pick Power Play",
+      "stake": 199,
+      "paid": 517.4,
+      "result": "Win"
+    },
+    {
+      "date": "Nov 10",
+      "picks": "J. McCain, J. Daniels",
+      "type": "2-Pick Power Play",
+      "stake": 5,
+      "paid": 0,
+      "toWin": 22.5,
+      "result": "Loss"
+    },
+    {
+      "date": "Nov 10",
+      "picks": "D. Lillard, S. Diggs",
+      "type": "2-Pick Power Play",
+      "stake": 175,
+      "paid": 350,
+      "result": "Win"
+    },
+    {
+      "date": "Nov 12",
+      "picks": "Game buy-in fee",
+      "type": "Fee",
+      "stake": 50,
+      "paid": 0,
+      "result": "Fee"
+    },
+    {
+      "date": "Nov 14",
+      "picks": "Z. Risacher, D. Mestemaker",
+      "type": "2-Pick Power Play",
+      "stake": 149,
+      "paid": 1266.5,
+      "result": "Win"
+    },
+    {
+      "date": "Nov 14",
+      "picks": "Z. Risacher, D. Mensah",
+      "type": "2-Pick Power Play",
+      "stake": 149,
+      "paid": 1005.75,
+      "result": "Win"
+    },
+    {
+      "date": "Nov 14",
+      "picks": "K. Irving, D. Mensah",
+      "type": "2-Pick Power Play",
+      "stake": 149,
+      "paid": 283.1,
+      "result": "Win"
+    },
+    {
+      "date": "Nov 14",
+      "picks": "J. McCain, J. Maiava",
+      "type": "2-Pick Power Play",
+      "stake": 175,
+      "paid": 420,
+      "result": "Win"
+    },
+    {
+      "date": "Nov 14",
+      "picks": "I. Collier, S. Leavitt",
+      "type": "2-Pick Power Play",
+      "stake": 150,
+      "paid": 825,
+      "result": "Win"
+    },
+    {
+      "date": "Nov 14",
+      "picks": "D. Mitchell, S. Leavitt",
+      "type": "2-Pick Power Play",
+      "stake": 190,
+      "paid": 323,
+      "result": "Win"
+    }
+  ],
+  "account": {
+    "asOf": "Nov 15, 2026",
+    "deposits": 1672.0,
+    "starting": 38.25,
+    "balance": 4693.81,
+    "withdrawn": 2475.0,
+    "partner": "Me",
+    "owner": "Chris"
   }
- ]
 }

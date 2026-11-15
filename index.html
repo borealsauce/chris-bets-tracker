@@ -46,10 +46,12 @@ th.t,td.t{text-align:left!important}
 <div class="top"><div class="wrap"><h1>Chris Bets Tracker</h1><div class="muted" id="sub">Running tally of Chris’s bets</div></div></div>
 <div class="wrap fx-in" id="app" style="padding-bottom:40px">
   <div class="cards" id="hero" style="margin-top:18px"></div>
+  <h2>Account summary &amp; split</h2>
+  <div class="scroll" id="acct"></div>
   <h2>Profit per bet</h2>
   <div class="chartbox" id="chart"></div>
   <h2>All bets</h2>
-  <div class="muted" style="margin-bottom:8px">Oldest first. Dates for the Wagner and Black slips were not visible in the screenshots.</div>
+  <div class="muted" style="margin-bottom:8px">Oldest first. Totals here only cover slips logged so far.</div>
   <div class="scroll" id="table"></div>
   <div class="note" id="notes"></div>
 </div>
@@ -74,6 +76,27 @@ function render(D){
   const pct=(w,n)=>n?((w/n)*100).toFixed(1)+'%':'—';
   const roi = staked ? (net/staked)*100 : 0;
   const roiTxt = (Math.abs(roi-Math.round(roi))<0.05?Math.round(roi):roi.toFixed(1))+'%';
+  const A=D.account;
+  if(A){
+    const putIn=A.deposits+A.starting, value=A.balance+A.withdrawn, prof=value-putIn, half=prof/2, keep=A.balance-half;
+    const r=(l,v,c='')=>`<tr class="${c}"><td class="t">${l}</td><td>${v}</td></tr>`;
+    document.getElementById('acct').innerHTML=`<table><thead><tr><th class="t">Summary (as of ${esc(A.asOf)})</th><th>Amount</th></tr></thead><tbody>`+
+      r('Deposits',usd(A.deposits))+r('Starting balance',usd(A.starting))+r('<b>Total put in</b>','<b>'+usd(putIn)+'</b>')+
+      r('Current balance',usd(A.balance))+r('Withdrawn to Chris’s bank',usd(A.withdrawn))+r('<b>Total value</b>','<b>'+usd(value)+'</b>')+
+      `<tr class="ft"><td class="t">Profit</td><td class="${prof>=0?'pos':'neg'}">${usd(prof,true)}</td></tr>`+
+      `<tr class="ft"><td class="t">Each half</td><td class="pos">${usd(half)}</td></tr>`+
+      `</tbody></table><table style="margin-top:12px"><thead><tr><th class="t">Split of ${usd(A.balance)} left</th><th>Amount</th></tr></thead><tbody>`+
+      r('To me',usd(half))+r('Chris keeps',usd(keep))+r('Chris total (incl. '+usd(A.withdrawn)+' withdrawn)',usd(keep+A.withdrawn))+`</tbody></table>`;
+    document.getElementById('sub').textContent=`Up ${usd(prof)} by account totals · ${usd(half)} each`;
+    document.getElementById('hero').innerHTML=[
+      ['Profit (account)',usd(prof,true),'pos shim','hero',`${usd(value)} value − ${usd(putIn)} put in`],
+      ['Each half',usd(half),'pos','','split 50/50'],
+      ['Total put in',usd(putIn),'','','deposits + starting'],
+      ['Total value',usd(value),'','','balance + withdrawn'],
+      ['Record',`${wins}–${losses}`,'','',`${wins} wins · ${losses} loss${losses===1?'':'es'} logged`],
+      ['Win rate',pct(wins,graded.length),'','',`${wins} of ${graded.length} logged bets`]
+    ].map(([l,v,cls,hero,s])=>`<div class="card${hero?' hero':''}"><div class="l">${l}</div><div class="v ${cls}">${v}</div>${s?`<div class="s">${s}</div>`:''}</div>`).join('');
+  } else {
   document.getElementById('sub').textContent = `Chris is ${net>=0?'up':'down'} ${usd(net)} on ${graded.length} bets so far (fees included)`;
   document.getElementById('hero').innerHTML = [
     ['Net winnings', usd(net,true), net>=0?'pos shim':'neg shim','hero', `${graded.length} bets, fees included`],
@@ -83,6 +106,7 @@ function render(D){
     ['Win rate', pct(wins,graded.length), '', '', `${wins} of ${graded.length} bets won`],
     ['Return on stakes', roiTxt, net>=0?'pos':'neg', '', 'net ÷ total staked']
   ].map(([l,v,cls,hero,s])=>`<div class="card${hero?' hero':''}"><div class="l">${l}</div><div class="v ${cls}">${v}</div>${s?`<div class="s">${s}</div>`:''}</div>`).join('');
+  }
 
   // Horizontal profit bars
   const profits = bets.map(b=>b.paid-b.stake);
